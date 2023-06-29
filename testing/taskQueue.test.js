@@ -1,6 +1,5 @@
 const taskQueue = require('../src/taskQueue')
 
-
 // test the addTask Method
 test('addTask should add a task to the queue', () => {
   const queue = new taskQueue();

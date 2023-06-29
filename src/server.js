@@ -13,13 +13,14 @@ app.get('/', (req, res) => {
 // can view the taskDispatcher functioning in the console.
 app.get('/taskQueue', (req, res) => {
     const queue = new TaskQueue();
-    queue.startDispatcher();
 
     queue.addTask("deliverPerscriptions");
     queue.addTask("deliverPPE");
     queue.addTask("fetchItem");
 
     const queueItems = queue.getQueue();
+
+    queue.startDispatcher();
 
     res.send(`Task Queue: ${queueItems.join(', ')}`);
 });
